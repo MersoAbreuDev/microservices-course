@@ -1,13 +1,12 @@
 package com.microservice.mscard.domain;
 
+import com.microservice.mscard.domain.enums.BandeiraCartao;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity
 @NoArgsConstructor
@@ -18,5 +17,22 @@ public class Card implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String nome;
 
+    @Enumerated(EnumType.STRING)
+    private BandeiraCartao bandeira;
+
+    private BigDecimal renda;
+
+    private BigDecimal limitebasico;
+
+    public Card(String nome,
+                BandeiraCartao bandeira,
+                BigDecimal renda,
+                BigDecimal limitebasico) {
+        this.nome = nome;
+        this.bandeira = bandeira;
+        this.renda = renda;
+        this.limitebasico = limitebasico;
+    }
 }
