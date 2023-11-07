@@ -27,7 +27,7 @@ public class CardResource {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping
+    @GetMapping(params="renda")
     public ResponseEntity<List<Card>> getCartoesRendaAte(@RequestParam("renda") Long renda){
         List<Card> list = cardService.getCartoesrendaMenorIgual(renda);
         return ResponseEntity.ok(list);

@@ -24,15 +24,15 @@ public class Card implements Serializable {
 
     private BigDecimal renda;
 
-    private BigDecimal limitebasico;
+    private BigDecimal limiteBasico;
 
     public Card(String nome,
                 BandeiraCartao bandeira,
                 BigDecimal renda,
-                BigDecimal limitebasico) {
+                BigDecimal limiteBasico) {
         this.nome = nome;
         this.bandeira = bandeira;
         this.renda = renda;
-        this.limitebasico = limitebasico;
+        this.limiteBasico = limiteBasico;
     }
 }

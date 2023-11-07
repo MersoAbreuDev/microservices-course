@@ -13,9 +13,9 @@ public class CardRequest {
 
     private BigDecimal renda;
 
-    private BigDecimal limitebasico;
+    private BigDecimal limiteBasico;
 
     public Card toModel(){
-        return new Card(nome, bandeira, renda, limitebasico);
+        return new Card(nome, bandeira, renda, limiteBasico);
     }
 }

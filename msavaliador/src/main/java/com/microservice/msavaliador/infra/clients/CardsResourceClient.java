@@ -1,5 +1,6 @@
 package com.microservice.msavaliador.infra.clients;
 
+import com.microservice.msavaliador.domain.Card;
 import com.microservice.msavaliador.domain.CartaoCliente;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -13,4 +14,7 @@ public interface CardsResourceClient {
 
     @GetMapping(params = "cpf")
     ResponseEntity<List<CartaoCliente>> getCartoesByCliente(@RequestParam("cpf") String cpf);
+
+    @GetMapping(params="renda")
+    public ResponseEntity<List<Card>> getCartoesRendaAte(@RequestParam("renda") Long renda);
 }
